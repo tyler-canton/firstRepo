@@ -1,4 +1,13 @@
 import 'bootstrap'
 import './sass/main.scss'
-let name  = 'Tyler Canton';
-console.log(name);
+
+//Global Variables//
+
+let name  = 'The Joker';
+
+// This is an object
+let obj = {
+    firstName: 'Harley Quinn'
+};
+
+let arr = ['Tylahn','Chris','Quinn'];
