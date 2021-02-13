@@ -1,4 +1,4 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
@@ -22,11 +22,11 @@ module.exports = (env, options) => ({
           options.mode !== "production"
             ? "style-loader"
             : {
-                loader: MiniCssExtractPlugin.loader,
-                options: {
-                  publicPath: "../",
-                },
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                publicPath: "../",
               },
+            },
           "css-loader",
           {
             loader: "postcss-loader",
