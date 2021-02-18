@@ -1,7 +1,8 @@
 import 'bootstrap'
 import './sass/main.scss'
-let name = 'Consuelo Maldoando';
-console.log(name);
+import { moduleObj } from './moduleObj';
+let name1 = 'Consuelo Maldoando';
+console.log(name1);
 
 // VARIABLE: Var Let Const
 // COMMENTS
@@ -44,6 +45,9 @@ let dataRelations=[{
 	"title": "delectus aut autem",
 	"completed": false
 }];
+console.log('DEBUG: data before push',dataRelations);
+dataRelations.push(moduleObj);
+console.log('DEBUG: data before push',dataRelations);
 
 let person = obj;
 // Undefined
