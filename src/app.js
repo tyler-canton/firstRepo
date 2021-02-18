@@ -1,9 +1,7 @@
 import 'bootstrap'
 import './sass/main.scss'
-<<<<<<< HEAD
 let name = 'Consuelo Maldoando';
 console.log(name);
-=======
 
 // VARIABLE: Var Let Const
 // COMMENTS
@@ -90,4 +88,3 @@ var myModule = (function ( jQ, _ ) {
 
 myModule.publicMethod();
  */
->>>>>>> dev
