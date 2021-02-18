@@ -16,8 +16,8 @@ let obj = {
 	// local scope
 	fname: 'Ty'
 };
-
-let dataRelations = [{
+ 
+window.dataRelations = [{
 	"userId": 1,
 	"id": 1,
 	"title": "delectus aut autem",
@@ -43,11 +43,19 @@ let dataRelations = [{
 	"title": "delectus aut autem",
 	"completed": false
 }];
+ 
+
+console.log('DEBUG: data before push',dataRelations);
+
+dataRelations.push(moduleObj);
+
+console.log('DEBUG: data before push',dataRelations);
 
 let person = obj;
 // Undefined
 console.log(person[anoterVariable]);
-console.log(moduleObj);
+
+console.log(dataRelations);
 
 
 
