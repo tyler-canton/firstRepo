@@ -1,6 +1,9 @@
 import 'bootstrap'
 import './sass/main.scss'
+// export
 import { moduleObj } from './module';
+// export default
+import MainClass from './MainClass';
 
 // VARIABLE: Var Let Const
 // COMMENTS
@@ -8,10 +11,10 @@ import { moduleObj } from './module';
 // SCOPE
 // HOISTING
 // GLOBAL SCOPE 
+// LEXICAL OR OBJECT SCOPE
 
 let fname = 'Yunis';
 let anoterVariable = 'fname';
-// LEXICAL OR OBJECT SCOPE
 let obj = {
 	// local scope
 	fname: 'Ty'
@@ -51,29 +54,27 @@ dataRelations.push(moduleObj);
 
 console.log('DEBUG: data before push',dataRelations);
 
-let person = obj;
-// Undefined
-console.log(person[anoterVariable]);
-
 console.log(dataRelations);
 
+// Implement "Instantiating a Class" for development
+let ourClass = new MainClass('Ty');
 
-
-// This is an comment
-
-/**
- *  @obj 
- *  @property firstname: this param with a datatype of string
- *  @TODO : I need to do addt'l work here
- */
-
-
-
-
+// Invoking a function
+console.log(ourClass.test());
 let name = 'Ty Canton';
 
+// String Interpolation
+let anothervariable;
+anothervariable = 'this will show below';
+let strPerson = `Anytext ${name}`;
+console.log(strPerson);
+
+
+
+
 /**
- * // Global module
+ * 
+ // Global module
 var myModule = (function ( jQ, _ ) {
 
 	function privateMethod1(){
