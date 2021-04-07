@@ -19,7 +19,7 @@ let obj = {
 	// local scope
 	fname: 'Ty'
 };
- 
+
 window.dataRelations = [{
 	"userId": 1,
 	"id": 1,
@@ -46,13 +46,13 @@ window.dataRelations = [{
 	"title": "delectus aut autem",
 	"completed": false
 }];
- 
 
-console.log('DEBUG: data before push',dataRelations);
+
+console.log('DEBUG: data before push', dataRelations);
 
 dataRelations.push(moduleObj);
 
-console.log('DEBUG: data before push',dataRelations);
+console.log('DEBUG: data before push', dataRelations);
 
 console.log(dataRelations);
 
@@ -60,7 +60,7 @@ console.log(dataRelations);
 let ourClass = new MainClass('Ty');
 
 // Invoking a function
-console.log(ourClass.test());
+console.log('Class Instantion', ourClass.test());
 let name = 'Ty Canton';
 
 // String Interpolation
@@ -72,10 +72,9 @@ console.log(strPerson);
 
 
 
-/**
- * 
+
  // Global module
-var myModule = (function ( jQ, _ ) {
+var fixMenuModule = (function ( jQ) {
 
 	function privateMethod1(){
 		jQ(".container").html("test");
@@ -92,7 +91,7 @@ var myModule = (function ( jQ, _ ) {
 	};
 
 // Pull in jQuery and Underscore
-}( jQuery, _ ));
+}( jQuery));
 
-myModule.publicMethod();
- */
+fixMenuModule.publicMethod();
+ 
