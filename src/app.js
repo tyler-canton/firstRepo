@@ -1,97 +1,54 @@
 import 'bootstrap'
+import Cookies from 'js-cookie';
 import './sass/main.scss'
-// export
-import { moduleObj } from './module';
-// export default
-import MainClass from './MainClass';
 
-// VARIABLE: Var Let Const
-// COMMENTS
-// DECLARATIONS
-// SCOPE
-// HOISTING
-// GLOBAL SCOPE 
-// LEXICAL OR OBJECT SCOPE
+// Global module
+var fixMenuModule = (function (jQ) {
 
-let fname = 'Yunis';
-let anoterVariable = 'fname';
-let obj = {
-	// local scope
-	fname: 'Ty'
-};
-
-window.dataRelations = [{
-	"userId": 1,
-	"id": 1,
-	"title": "delectus aut autem",
-	"completed": false
-}, {
-	"userId": 1,
-	"id": 1,
-	"title": "delectus aut autem",
-	"completed": false
-}, {
-	"userId": 1,
-	"id": 1,
-	"title": "delectus aut autem",
-	"completed": false
-}, {
-	"userId": 1,
-	"id": 1,
-	"title": "delectus aut autem",
-	"completed": false
-}, {
-	"userId": 1,
-	"id": 1,
-	"title": "delectus aut autem",
-	"completed": false
-}];
+	function readyMenu(targetEl) {
+		jQ(function () {
 
 
-console.log('DEBUG: data before push', dataRelations);
+			jQ(window).on('scroll', function () {
 
-dataRelations.push(moduleObj);
+				// Cookie check to add menu back
+				if (jQ(window).scrollTop() < 20) {
 
-console.log('DEBUG: data before push', dataRelations);
+					if (Cookies.get('menuFixed')) {
+						Cookies.remove('menuFixed');
+						jQ(targetEl).fadeIn();
+					}
+				}
+				
+				if (jQ(window).scrollTop() > 100) {
+					jQ(targetEl).addClass('fixed');
+				}
+				else {
+					jQ(targetEl).removeClass('fixed');
+				}
+			});
 
-console.log(dataRelations);
-
-// Implement "Instantiating a Class" for development
-let ourClass = new MainClass('Ty');
-
-// Invoking a function
-console.log('Class Instantion', ourClass.test());
-let name = 'Ty Canton';
-
-// String Interpolation
-let anothervariable;
-anothervariable = 'this will show below';
-let strPerson = `Anytext ${name}`;
-console.log(strPerson);
-
-
-
-
-
- // Global module
-var fixMenuModule = (function ( jQ) {
-
-	function privateMethod1(){
-		jQ(".container").html("test");
+			// Hide menu and set cookie
+			jQ('#closeEyebrow').on("click", function () {
+				jQ(targetEl).fadeOut();
+				Cookies.set('menuFixed', 'true');
+			});
+		});
 	}
 
-	function privateMethod2(){
-	  console.log( _.min([10, 5, 100, 2, 1000]) );
+	function _funcDebug(msg, bug) {
+		console.log(`DEBUG: ${msg} `, bug);
 	}
 
-	return{
-		publicMethod: function(){
-			privateMethod1();
+	return {
+		init: function (targetEl) {
+			readyMenu(targetEl);
 		}
 	};
 
-// Pull in jQuery and Underscore
-}( jQuery));
+}(jQuery));
 
-fixMenuModule.publicMethod();
- 
+/**
+ * @param {string} - Targeted element to fix to top of screen
+ */
+fixMenuModule.init('.eyebrow');
