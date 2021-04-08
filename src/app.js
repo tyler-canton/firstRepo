@@ -12,6 +12,7 @@ var fixMenuModule = (function (jQ) {
 			jQ(window).on('scroll', function () {
 
 				// Cookie check to add menu back
+<<<<<<< HEAD
 				if (jQ(window).scrollTop() < 20) {
 
 					if (Cookies.get('menuFixed')) {
@@ -20,6 +21,13 @@ var fixMenuModule = (function (jQ) {
 					}
 				}
 				
+=======
+				if (Cookies.get('menuFixed')) {
+					Cookies.remove('menuFixed');
+					jQ(targetEl).fadeIn();
+				}
+
+>>>>>>> 2168429f82d429df9c9090b0a6bcb723116bff6c
 				if (jQ(window).scrollTop() > 100) {
 					jQ(targetEl).addClass('fixed');
 				}
