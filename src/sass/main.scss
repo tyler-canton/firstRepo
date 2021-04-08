@@ -4,5 +4,98 @@
 @import "variables";
 
 body {
-  background: #fff;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+header {
+  height: 100px;
+  background: #240d73;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  height: 100%;
+  padding: 10px;
+}
+
+.logo svg {
+  height: 100%;
+}
+
+.section {
+  height: 500px;
+}
+
+.sectionOne {
+  background: #ccc;
+}
+
+.sectionTwo {
+  background: #acacac;
+}
+
+.sectionThree {
+  background: #eee;
+}
+
+footer {
+  width: 100%;
+  height: 300px;
+  background: #222;
+}
+
+.eyebrow {
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left:0;
+  }
+  color: #fff;
+  background: #454545;
+  width: 100%;
+}
+
+.eyebrowContent {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#closeEyebrow {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#closeEyebrow:after,
+#closeEyebrow:before {
+  content: '';
+  height: 20px;
+  border-left: 2px solid #fff;
+  position: absolute;
+  left: 9px;
+  top: 0;
+}
+
+#closeEyebrow:after {
+  transform: rotate(45deg);
+}
+
+#closeEyebrow:before {
+  transform: rotate(-45deg);
 }
