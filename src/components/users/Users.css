@@ -1,0 +1,8 @@
+.container {
+    padding-top: 25px;
+}
+
+img.card-img {
+    box-shadow: 4px 2px 4px rgb(162, 162, 162);
+    border-radius: 4px;
+}

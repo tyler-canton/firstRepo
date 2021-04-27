@@ -1,0 +1,11 @@
+.repo-list {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.repo-list .card.card-repo {
+    height: auto;
+    flex: 0 0 100%;
+    align-items: flex-start;
+}

@@ -1,25 +1,34 @@
-import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import {   faGithub } from "@fortawesome/free-brands-svg-icons"
-import propTypes from 'prop-types'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faUserFriends } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import logo from '../../varLogo.png'
+const Navbar = ({ title, name }) => {
 
-export class Navbar extends Component {
+    return (
+        <nav className="navbar bg-primary">
+            <Link to='/'>
+                <div className="header-logo"> <img src={logo} className="img-responsive" /> <span className="header-title"> {title}</span> </div>
+            </Link>
+            <ul className="menu-items">
+                <li>
+                    <Link to='/'> <FontAwesomeIcon className='icon-menu' icon={faHome} />Home </Link>
+                </li>
+                <li>
+                    <Link to='/about'>
+                        <FontAwesomeIcon className='icon-menu' icon={faUserFriends} />About
+                    </Link>
+                </li>
+            </ul>
+        </nav>
+    );
+};
 
-    static defaultProps = {
-        title: 'Github Finder'
-    };
+Navbar.defaultProps = {
+    title: 'Github Finder'
+};
 
-    render() {
-        return (
-            <nav className="navbar bg-primary">
-                <h1><FontAwesomeIcon className='icon-social' icon={faGithub} />{this.props.title}</h1>
-            </nav>
-        )
-    }
-    static propTypes = {
-        title: propTypes.string.isRequired
-    }
-}
 
-export default Navbar
+
+export default Navbar;
