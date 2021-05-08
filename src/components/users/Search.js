@@ -1,12 +1,14 @@
 import React, { useState, useContext } from 'react'
-import PropTypes from 'prop-types'
 import './Search.css'
 import GithubContext from '../../context/github/githubContext';
-
+import AlertContext from '../../context/globalAlert/alertContext';
 
 const Search = () => {
     const githubContext = useContext(GithubContext);
-    const { users, searchUsers, clearUsers, showAlert } = githubContext;
+    const globalAlertConext = useContext(AlertContext);
+
+    const { users, searchUsers, clearUsers } = githubContext;
+    const { showAlert } = globalAlertConext;
     const [text, setText] = useState('');
 
     const submitUser = e => {

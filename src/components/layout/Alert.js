@@ -1,11 +1,11 @@
 import React, { Component, useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
-import GithubContext from '../../context/github/githubContext';
+import AlertContext from '../../context/globalAlert/alertContext';
 
 const Alert = () => {
-    const githubContext = useContext(GithubContext);
-    const { alert } = githubContext;
+    const alertContext = useContext(AlertContext);
+    const { alert } = alertContext;
     return (
         alert != null && (
 

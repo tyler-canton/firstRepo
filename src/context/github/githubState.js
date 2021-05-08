@@ -21,7 +21,6 @@ const GithubState = props => {
         users: [],
         user: {},
         repos: [],
-        alert: null,
         loading: false
     }
     const [state, dispatch] = useReducer(GithubReducer, initialState);
@@ -79,13 +78,6 @@ const GithubState = props => {
     // Clear Users
     const clearUsers = () => dispatch({ type: CLEAR_USERS });
 
-    // Show Alert
-    const showAlert = (msg, type) => {
-        dispatch({ type: SET_ALERT, payload: { msg, type } });
-        setTimeout(() => {
-            dispatch({ type: CLEAR_ALERT })
-        }, 2500);
-    }
     // Set Repos
     // Normal function for lifecycle methos use async keyword
     const getUserRepos = async (username) => {
@@ -116,7 +108,6 @@ const GithubState = props => {
                 getUsers,
                 getUser,
                 setUsers,
-                showAlert,
                 getUserRepos
             }}
         >
