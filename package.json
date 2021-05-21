@@ -10,7 +10,12 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "aws-amplify": "4.0.2",
+    "aws-amplify-react": "5.0.0",
     "axios": "0.21.1",
+    "bootstrap": "4.0.0-beta",
+    "jquery": "3.6.0",
+    "popper.js": "1.16.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "5.2.0",
@@ -28,15 +33,17 @@
       "react-app",
       "react-app/jest"
     ],
-    "overrides": [{
-      "files": [
-        "src/**/*.js"
-      ],
-      "rules": {
-        "import/no-anonymous-default-export": "off",
-        "no-unused-vars": "off"
+    "overrides": [
+      {
+        "files": [
+          "src/**/*.js"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off",
+          "no-unused-vars": "off"
+        }
       }
-    }]
+    ]
   },
   "browserslist": {
     "production": [
